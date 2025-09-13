@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Party Games
+
+A fun collection of party games built with Next.js, TypeScript, and Tailwind CSS. This is a Progressive Web App (PWA) that works on both mobile and desktop devices.
+
+## Features
+
+- 🕵️ **AGENT-X Game**: A thrilling game where players must identify secret agents
+- 🌍 **Multi-language Support**: English and Persian (Farsi)
+- 📱 **Mobile-First Design**: Optimized for mobile devices with responsive design
+- 🔄 **PWA Support**: Installable as a native app
+- ⚡ **Fast & Modern**: Built with Next.js 15 and TypeScript
+
+## Games
+
+### AGENT-X
+A social deduction game where:
+- Players answer questions each round
+- Secret agents must lie while others tell the truth
+- Players try to identify who the agents are
+- Points are awarded based on correct identification
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # Basic UI components (Button, Input, Card, etc.)
+│   ├── games/          # Game-specific components
+│   ├── Layout.tsx      # Main layout wrapper
+│   ├── Header.tsx      # App header
+│   └── Footer.tsx      # App footer
+├── context/            # React Context for state management
+│   ├── AppContext.tsx  # Global app state
+│   └── GameContext.tsx # Game-specific state
+├── data/               # Static data files
+│   └── questions.json  # Game questions
+├── lib/                # Utility functions
+│   └── utils.ts        # Helper functions
+├── types/              # TypeScript type definitions
+│   └── index.ts        # Main types
+└── app/                # Next.js app directory
+    ├── layout.tsx      # Root layout
+    ├── page.tsx        # Main page component
+    └── globals.css     # Global styles
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Adding New Games
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project is designed to be easily extensible. To add a new game:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Create a new component in `src/components/games/`
+2. Add the game definition to the games array in `HomePage.tsx`
+3. Add routing logic in `page.tsx`
+4. Implement game-specific settings in the settings flow
 
-## Deploy on Vercel
+## Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js 15** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **React Context** - State management
+- **PWA** - Progressive Web App features
+- **Framer Motion** - Animations (ready for use)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Development
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## License
+
+Developed by R

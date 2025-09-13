@@ -1,0 +1,242 @@
+[
+  {
+    "id": "1",
+    "text": {
+      "en": "How many teeth do you have?",
+      "fa": "چند تا دندون داری؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "2",
+    "text": {
+      "en": "How many times a week do you shower?",
+      "fa": "تو هفته چند بار حمام میری؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "3",
+    "text": {
+      "en": "How many times have you been in love?",
+      "fa": "چندبار تا حالا عاشق شدی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "4",
+    "text": {
+      "en": "How many fake Instagram accounts do you have?",
+      "fa": "چندتا اکانت فیک تو اینستاگرام داری؟"
+    },
+    "category": "social"
+  },
+  {
+    "id": "5",
+    "text": {
+      "en": "What was your math grade?",
+      "fa": "نمره ریاضیت چند می‌شد؟"
+    },
+    "category": "education"
+  },
+  {
+    "id": "6",
+    "text": {
+      "en": "How many times did you burp today?",
+      "fa": "چند بار امروز آروغ زدی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "7",
+    "text": {
+      "en": "How many times did you lie this week?",
+      "fa": "چند بار این هفته دروغ گفتی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "8",
+    "text": {
+      "en": "How tall are you in centimeters?",
+      "fa": "قدت چند سانته؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "9",
+    "text": {
+      "en": "How many white hairs do you have?",
+      "fa": "چندتا تار موی سفید داری؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "10",
+    "text": {
+      "en": "How many hours a day are you on your phone?",
+      "fa": "چند ساعت در روز تو گوشی‌ای؟"
+    },
+    "category": "technology"
+  },
+  {
+    "id": "11",
+    "text": {
+      "en": "How many people have you blocked?",
+      "fa": "چند نفر رو بلاک کردی؟"
+    },
+    "category": "social"
+  },
+  {
+    "id": "12",
+    "text": {
+      "en": "How many times a month do you exercise?",
+      "fa": "تو ماه چند بار ورزش می‌کنی؟"
+    },
+    "category": "health"
+  },
+  {
+    "id": "13",
+    "text": {
+      "en": "How many real close friends do you have?",
+      "fa": "چندتا دوست صمیمی واقعی داری؟"
+    },
+    "category": "social"
+  },
+  {
+    "id": "14",
+    "text": {
+      "en": "How many times have you broken someone's heart?",
+      "fa": "تا حالا چند بار دل کسی رو شکستی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "15",
+    "text": {
+      "en": "How many pairs of shoes do you have?",
+      "fa": "چند تا کفش داری؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "16",
+    "text": {
+      "en": "How many dishes can you cook?",
+      "fa": "چندتا غذا بلدی بپزی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "17",
+    "text": {
+      "en": "How many times did you take the driving test?",
+      "fa": "چندبار امتحان رانندگی دادی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "18",
+    "text": {
+      "en": "How many times did you laugh from morning until now?",
+      "fa": "چندبار از صبح تا الان خندیدی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "19",
+    "text": {
+      "en": "How many hours can you go without talking?",
+      "fa": "چند ساعت می‌تونی حرف نزنی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "20",
+    "text": {
+      "en": "How many +18 movies have you watched?",
+      "fa": "چندتا فیلم +۱۸ دیدی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "21",
+    "text": {
+      "en": "How many times a month do you cry?",
+      "fa": "تو ماه چند بار گریه می‌کنی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "22",
+    "text": {
+      "en": "How many times have you held someone's hand?",
+      "fa": "چندبار دست کسی رو گرفتی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "23",
+    "text": {
+      "en": "How many tattoos or piercings do you have?",
+      "fa": "چندتا تتو یا پیرسینگ داری؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "24",
+    "text": {
+      "en": "How many times have you had a broken heart?",
+      "fa": "چندبار تا حالا شکست عشقی خوردی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "25",
+    "text": {
+      "en": "How many people know your phone password?",
+      "fa": "چند نفر رمز گوشیتو می‌دونن؟"
+    },
+    "category": "technology"
+  },
+  {
+    "id": "26",
+    "text": {
+      "en": "How many unread messages do you have in WhatsApp/Telegram?",
+      "fa": "چندتا پیام تو واتس‌اپ/تلگرام بی‌جواب داری؟"
+    },
+    "category": "technology"
+  },
+  {
+    "id": "27",
+    "text": {
+      "en": "How many times this month did you wake up late?",
+      "fa": "چند بار این ماه دیر از خواب بیدار شدی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "28",
+    "text": {
+      "en": "How many countries do you want to travel to?",
+      "fa": "چندتا کشور دلت می‌خواد سفر بری؟"
+    },
+    "category": "travel"
+  },
+  {
+    "id": "29",
+    "text": {
+      "en": "How old were you when you felt grown up?",
+      "fa": "چند سالته از وقتی احساس کردی بزرگ شدی؟"
+    },
+    "category": "personal"
+  },
+  {
+    "id": "30",
+    "text": {
+      "en": "How many ugly photos do you have on your phone that you haven't deleted?",
+      "fa": "چندتا عکس زشت تو گوشیت داری که پاک نکردی؟"
+    },
+    "category": "personal"
+  }
+]
