@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 import withPWA from "next-pwa";
 const base = process.env.NEXT_PUBLIC_PAGES_BASE_PATH || '';
-const assetPrefix = process.env.NEXT_PUBLIC_PAGES_ASSET_PREFIX || base;
+const assetPrefix = process.env.NEXT_PUBLIC_PAGES_ASSET_PREFIX || '';
 
 const nextConfig: NextConfig = {
   // Remove experimental.appDir as it's no longer needed in Next.js 15
