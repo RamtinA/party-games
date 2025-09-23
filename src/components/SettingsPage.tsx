@@ -1,6 +1,31 @@
 "use client";
 
 import React, { useState } from "react";
+// Validation helper
+function validateSettings({ players, gameSettings }: { players: { id: string; name: string }[]; gameSettings: { rounds: number | string; agents: number | string } }) {
+  const errors: Record<string, string> = {};
+  // Player name required
+  if (players.some((p) => !p.name.trim())) {
+    errors.players = "All player names are required.";
+  }
+  // At least two players
+  if (players.length < 2) {
+    errors.playersCount = "At least two players are required.";
+  }
+  // Rounds > 0
+  const rounds = Number(gameSettings.rounds);
+  if (!rounds || isNaN(rounds) || rounds <= 0) {
+    errors.rounds = "Rounds must be greater than 0.";
+  }
+  // Agents >= 1 and < players
+  const agents = Number(gameSettings.agents);
+  if (!agents || isNaN(agents) || agents < 1) {
+    errors.agents = "There must be at least one agent.";
+  } else if (agents >= players.length) {
+    errors.agents = "Agents must be less than number of players.";
+  }
+  return errors;
+}
 import { useApp } from "@/context/AppContext";
 import { useGame } from "@/context/GameContext";
 import { Button } from "./ui/Button";
@@ -21,10 +46,11 @@ export function SettingsPage() {
     { id: "2", name: `${t.player} 2` },
     { id: "3", name: `${t.player} 3` },
   ]);
-  const [gameSettings, setGameSettings] = useState({
+  const [gameSettings, setGameSettings] = useState<{ rounds: number | ''; agents: number | '' }>({
     rounds: 10,
     agents: 1,
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const steps = ["info", "players", "game-settings"];
   const currentStepIndex = steps.indexOf(currentStep) + 1;
@@ -47,26 +73,46 @@ export function SettingsPage() {
     }
   };
 
+
   const handleNext = () => {
     if (currentStep === "info") {
       setCurrentStep("players");
+      setErrors({});
     } else if (currentStep === "players") {
+      // Validate player names and count
+      const stepErrors = validateSettings({ players, gameSettings });
+      if (stepErrors.players || stepErrors.playersCount) {
+        setErrors(stepErrors);
+        return;
+      }
+      setErrors({});
       setCurrentStep("game-settings");
     }
   };
 
   const handlePlay = () => {
+    // Validate all settings
+    const stepErrors = validateSettings({ players, gameSettings });
+    if (Object.keys(stepErrors).length > 0) {
+      setErrors(stepErrors);
+      return;
+    }
+    setErrors({});
     // Convert players to the proper format and dispatch
     const formattedPlayers = players.map((p) => createPlayer(p.name));
     dispatch({ type: "SET_PLAYERS", payload: formattedPlayers });
     dispatch({ type: "SET_GAME_ACTIVE", payload: true });
-
+    // Ensure rounds and agents are numbers
+    const safeSettings = {
+      rounds: typeof gameSettings.rounds === 'number' ? gameSettings.rounds : 1,
+      agents: typeof gameSettings.agents === 'number' ? gameSettings.agents : 1,
+    };
     // Initialize the game with players and settings
     gameDispatch({
       type: "INITIALIZE_GAME",
       payload: {
         players: formattedPlayers,
-        settings: gameSettings,
+        settings: safeSettings,
       },
     });
   };
@@ -98,7 +144,7 @@ export function SettingsPage() {
                 size="lg"
                 className="animate-bounce-in"
               >
-                {t.next}
+                {t.undrestood}
               </Button>
             </div>
           </div>
@@ -129,17 +175,15 @@ export function SettingsPage() {
                       placeholder={`${t.player} ${index + 1}`}
                       className="flex-1"
                     />
-                    {/* {players.length > 2 && ( */}
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        disabled={players.length <= 2}
-                        onClick={() => removePlayer(player.id)}
-                        className="w-12 h-12 rounded-xl text-gray-100"
-                      >
-                        ✕
-                      </Button>
-                    {/* )} */}
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      disabled={players.length <= 2}
+                      onClick={() => removePlayer(player.id)}
+                      className="w-12 h-12 rounded-xl text-gray-100"
+                    >
+                      ✕
+                    </Button>
                   </div>
                 ))}
                 <Button
@@ -149,6 +193,12 @@ export function SettingsPage() {
                 >
                   {t.addPlayer}
                 </Button>
+                {errors.players && (
+                  <div className="text-red-400 text-sm mt-2">{errors.players}</div>
+                )}
+                {errors.playersCount && (
+                  <div className="text-red-400 text-sm mt-2">{errors.playersCount}</div>
+                )}
               </div>
             </div>
             <div className="mt-8 text-center">
@@ -180,15 +230,19 @@ export function SettingsPage() {
                         type="number"
                         min="1"
                         max="20"
-                        value={gameSettings.rounds}
-                        onChange={(e) =>
+                        value={gameSettings.rounds === 0 ? '' : gameSettings.rounds}
+                        onChange={(e) => {
+                          const val = e.target.value;
                           setGameSettings((prev) => ({
                             ...prev,
-                            rounds: parseInt(e.target.value) || 1,
-                          }))
-                        }
+                            rounds: val === '' ? '' : parseInt(val) || 0,
+                          }));
+                        }}
                         className="text-center text-lg font-bold"
                       />
+                      {errors.rounds && (
+                        <div className="text-red-400 text-sm mt-2">{errors.rounds}</div>
+                      )}
                     </div>
                 </div>
 
@@ -201,15 +255,19 @@ export function SettingsPage() {
                       type="number"
                       min="1"
                       max={players.length - 1}
-                      value={gameSettings.agents}
-                      onChange={(e) =>
+                      value={gameSettings.agents === 0 ? '' : gameSettings.agents}
+                      onChange={(e) => {
+                        const val = e.target.value;
                         setGameSettings((prev) => ({
                           ...prev,
-                          agents: parseInt(e.target.value) || 1,
-                        }))
-                      }
+                          agents: val === '' ? '' : parseInt(val) || 0,
+                        }));
+                      }}
                       className="text-center text-lg font-bold"
                     />
+                    {errors.agents && (
+                      <div className="text-red-400 text-sm mt-2">{errors.agents}</div>
+                    )}
                   </div>
                 </div>
               </div>

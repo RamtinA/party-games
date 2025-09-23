@@ -30,6 +30,7 @@ export interface Translations {
   numberOfAgents: string;
   addPlayer: string;
   player: string;
+  undrestood: string;
   
   // AGENT-X Game
   agentX: string;
@@ -83,7 +84,8 @@ export const translations: Record<Language, Translations> = {
     numberOfRounds: 'Number of Rounds',
     numberOfAgents: 'Number of Agents',
     addPlayer: '+ Add Player',
-    player: 'Player',
+    player: 'بازیکن',
+    undrestood: 'Understood',
     
     // AGENT-X Game
     agentX: 'AGENT-X',
@@ -137,7 +139,7 @@ export const translations: Record<Language, Translations> = {
     numberOfAgents: 'تعداد جاسوسان',
     addPlayer: '+ افزودن بازیکن',
     player: 'بازیکن',
-    
+    undrestood: 'فهمیدم',
     // AGENT-X Game
     agentX: 'جاسوس-ایکس',
     round: 'دور',
