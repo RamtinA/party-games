@@ -19,14 +19,11 @@ jobs:
       - name: install dependencies
         run: npm ci
 
-      - name: Build & Export (static)
+      - name: Build (static export)
         env:
-          # If you're hosting at https://username.github.io/party-games/
           NEXT_PUBLIC_PAGES_BASE_PATH: '/party-games'
           NEXT_PUBLIC_PAGES_ASSET_PREFIX: '/party-games/'
-        run: |
-          npm run build
-          npm run export
+        run: npm run build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
