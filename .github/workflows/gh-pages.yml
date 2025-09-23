@@ -21,8 +21,8 @@ jobs:
 
       - name: Build (static export)
         env:
-          NEXT_PUBLIC_PAGES_BASE_PATH: '/party-games'
-          NEXT_PUBLIC_PAGES_ASSET_PREFIX: '/party-games/'
+          NEXT_PUBLIC_PAGES_BASE_PATH: ''
+          NEXT_PUBLIC_PAGES_ASSET_PREFIX: ''
         run: npm run build
 
       - name: Deploy to gh-pages
