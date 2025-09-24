@@ -1,0 +1,50 @@
+const en = {
+  partyGames: "Party Games",
+  playGame: "Play Game",
+  playAgain: "Play Again",
+  yes: "Yes",
+  no: "No",
+  next: "Next",
+  player: "Player",
+  players: "Players",
+  languageToggle:"فا",
+  developedBy: "Developed by RamtinA",
+  reset: "Reset Game",
+  gameInformation: "Game Information",
+  question: "Question:",
+  home: {
+    welcomeTitle: "Welcome to Party Games",
+    welcomeSubtitle: "Choose a game to start playing with your friends!",
+    noGamesAvailable: "No games available at the moment."
+  },
+  settings: {
+    gameSettings: "Game Settings",
+    numberOfRounds: "Number of Rounds",
+    numberOfAgents: "Number of Agents",
+    addPlayer: "+ Add Player",
+    understood: "Understood",
+    allPlayerNamesRequired: "All player names are required.",
+    atLeastTwoPlayers: "At least two players are required.",
+    roundsGreaterThanZero: "Rounds must be greater than 0.",
+    agentsAtLeastOne: "There must be at least one agent.",
+    agentsLessThanPlayers: "Agents must be less than number of players."
+  },
+  agentX: {
+    name: "Agent X",
+    description: "A thrilling game where players must identify the secret agents among them. Each round, players answer questions, but agents must lie while others tell the truth. Can you spot the agents before it's too late?",
+    round: "Round",
+    of: "of",
+    reveal: "Reveal",
+    nextPlayer: "Next Player",
+    finishRound: "Finish Round",
+    didAgentsWin: "Did the agents win?",
+    gameFinished: "Game Finished!",
+    finalScores: "Final Scores",
+    points: "points",
+    youAreAgentX: "YOU ARE AGENT-X!",
+    lieAboutAnswer: "Lie about your answer to blend in!",
+    answerTruthfully: "Answer truthfully!",
+    roundComplete: "Round Complete",
+  }
+};
+export default en;

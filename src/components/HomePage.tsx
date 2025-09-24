@@ -5,17 +5,17 @@ import { useApp } from '@/context/AppContext';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
 import { Game } from '@/types';
-import { useTranslations } from '@/lib/translations';
+import { t, Language } from '@/lib/i18n';
 
 export function HomePage() {
   const { state, dispatch } = useApp();
-  const t = useTranslations(state.language);
+  const lang = state.language as Language;
 
   const games: Game[] = [
     {
       id: 'agent-x',
-      name: t.agentX,
-      description: t.agentXDescription,
+      name: t(lang, 'agentX.name'),
+      description: t(lang, 'agentX.description'),
       needsTeams: false,
       settings: {
         rounds: 10,
@@ -33,7 +33,7 @@ export function HomePage() {
     <div className="max-w-6xl mx-auto px-4">
       <div className="text-center mb-16">
         <p className="text-xl text-white font-medium animate-fade-in">
-          {t.welcomeSubtitle}
+          {t(lang, 'home.welcomeSubtitle')}
         </p>
       </div>
 
@@ -58,7 +58,7 @@ export function HomePage() {
                 {game.description}
               </p>
               <Button className="w-full animate-bounce-in" style={{ animationDelay: `${index * 0.2 + 0.5}s` }}>
-                {t.playGame}
+                {t(lang, 'playGame')}
               </Button>
             </div>
           </Card>
@@ -70,7 +70,7 @@ export function HomePage() {
           <div className="gaming-card p-8 max-w-md mx-auto">
             <div className="text-6xl mb-4">😔</div>
             <p className="text-gray-600 font-medium">
-              {t.noGamesAvailable}
+              {t(lang, 'home.noGamesAvailable')}
             </p>
           </div>
         </div>

@@ -50,8 +50,6 @@ export interface Translations {
   playAgain: string;
   roundComplete: string;
   
-  // Game Description
-  agentXDescription: string;
 }
 
 export const translations: Record<Language, Translations> = {
@@ -84,7 +82,7 @@ export const translations: Record<Language, Translations> = {
     numberOfRounds: 'Number of Rounds',
     numberOfAgents: 'Number of Agents',
     addPlayer: '+ Add Player',
-    player: 'بازیکن',
+    player: 'player',
     undrestood: 'Understood',
     
     // AGENT-X Game
@@ -106,7 +104,6 @@ export const translations: Record<Language, Translations> = {
     roundComplete: 'Round Complete',
     
     // Game Description
-    agentXDescription: 'A thrilling game where players must identify the secret agents among them. Each round, players answer questions, but agents must lie while others tell the truth. Can you spot the agents before it\'s too late?',
   },
   
   fa: {
@@ -159,7 +156,7 @@ export const translations: Record<Language, Translations> = {
     roundComplete: 'دور تمام شد',
     
     // Game Description
-    agentXDescription: 'بازی هیجان‌انگیزی که در آن بازیکنان باید جاسوسان مخفی را شناسایی کنند. در هر دور، بازیکنان به سوالات پاسخ می‌دهند، اما جاسوسان باید دروغ بگویند در حالی که دیگران راست می‌گویند. آیا می‌توانید جاسوسان را قبل از اینکه دیر شود شناسایی کنید؟',
+    //agentXDescription: 'بازی هیجان‌انگیزی که در آن بازیکنان باید جاسوسان مخفی را شناسایی کنند. در هر دور، بازیکنان به سوالات پاسخ می‌دهند، اما جاسوسان باید دروغ بگویند در حالی که دیگران راست می‌گویند. آیا می‌توانید جاسوسان را قبل از اینکه دیر شود شناسایی کنید؟',
   },
 };
 

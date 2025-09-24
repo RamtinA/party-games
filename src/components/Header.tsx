@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { useApp } from '@/context/AppContext';
-import { useTranslations } from '@/lib/translations';
+import { t, Language } from '@/lib/i18n';
 
 export function Header() {
   const { state, dispatch } = useApp();
-  const t = useTranslations(state.language);
+  const lang = state.language as Language;
 
   const toggleLanguage = () => {
     dispatch({
@@ -27,13 +27,13 @@ export function Header() {
             className="text-white font-bold gaming-title text-4xl cursor-pointer hover:scale-105 transition-all duration-300 animate-bounce-in"
             onClick={resetGame}
           >
-            {t.partyGames}
+            {t(lang, 'partyGames')}
           </h1>
           <button
             onClick={toggleLanguage}
             className="background-accent px-6 py-3 text-sm font-bold text-white bg-gradient-to-t from-red-700 to-red-600 rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
-            {t.languageToggle}
+            {t(lang, 'header.languageToggle')}
           </button>
         </div>
       </div>
